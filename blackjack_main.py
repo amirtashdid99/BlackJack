@@ -1,5 +1,14 @@
 import os
 import random
+import platform
+
+def clear_screen():
+    if platform.system() == "Windows":
+        os.system('cls')
+    else:
+        os.system('clear')
+
+
 
 def deal_card():
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
@@ -74,5 +83,5 @@ def play_game():
     print(compare(user_score, computer_score))
 
 while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
-    os.system('cls')
+    clear_screen()
     play_game()
